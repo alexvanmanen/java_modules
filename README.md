@@ -1,5 +1,3 @@
-# Java Modules Project
-
 # Java Modules Oefenproject
 
 Dit project demonstreert de basisprincipes van het Java Module System (JPMS). Het is opgezet als een praktische oefening om te leren hoe je modules definieert, compileert, verpakt en uitvoert.
