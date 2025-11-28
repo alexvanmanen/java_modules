@@ -24,15 +24,12 @@ Het project bestaat uit twee afzonderlijke modules:
 
 ### 1.1 Compileer de java code voor de course module
 ```bash
-javac -d mods/course \
-course/src/module-info.java \
-course/src/com/enthu/course/Course.java
+javac -d mods/course course/src/module-info.java course/src/com/enthu/course/Course.java
 ```
 
 ### 1.2 Maak een jar file en zet het in de map mlib
 ```bash
-mkdir -p mlib
-jar -c -f mlib/course.jar -C mods/course .
+mkdir -p mlib jar -c -f mlib/course.jar -C mods/course .
 ```
 
 
@@ -41,16 +38,12 @@ jar -c -f mlib/course.jar -C mods/course .
 
 ### 2.1 Compileer de java code voor de training module
 ```bash
-javac -d mods/training \
---module-path mods/course \
-training/src/module-info.java \
-training/src/com/enthu/training/StartGui.java
+javac -d mods/training --module-path mods/course training/src/module-info.java training/src/com/enthu/training/StartGui.java
 ```
 
 ### 2.2 Maak een jar file en zet het in de map mlib
 ```bash
-jar -c -f mlib/training.jar \
-    -C mods/training .
+jar -c -f mlib/training.jar -C mods/training .
 ```
 
 ## 3. Voer de applicatie uit
@@ -63,5 +56,5 @@ java --module-path mlib/course.jar:mlib/training.jar --module enthu.training/com
 
 Windows
 ```bash
-java --module-path mlib/course.jar:mlib/training.jar --module enthu.training/com.enthu.training.StartGui
+java --module-path mlib/course.jar;mlib/training.jar --module enthu.training/com.enthu.training.StartGui
 ```
