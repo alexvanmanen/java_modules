@@ -29,7 +29,7 @@ javac -d mods/course course/src/module-info.java course/src/com/enthu/course/Cou
 
 ### 1.2 Maak een jar file en zet het in de map mlib
 ```bash
-mkdir -p mlib jar -c -f mlib/course.jar -C mods/course .
+jar -c -f mlib/course.jar -C mods/course .
 ```
 
 
